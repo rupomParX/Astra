@@ -1,0 +1,9 @@
+services:
+  matrix-bot:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      STORAGE_FILE: /app/data/bot.json
+    volumes:
+      - ./data:/app/data
